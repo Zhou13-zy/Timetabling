@@ -1,0 +1,95 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Rebuild and Run Docker",
+            "type": "shell",
+            "command": "docker-compose up --build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Docker",
+            "type": "shell",
+            "command": "docker-compose up",
+            "problemMatcher": []
+        },
+        {
+            "label": "Stop Docker",
+            "type": "shell",
+            "command": "docker-compose down",
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Clean All Docker Images",
+            "type": "shell",
+            "command": "docker image prune -a --force",
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Clean All Docker Volumes",
+            "type": "shell",
+            "command": "docker volume prune -a --force",
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Start Electron",
+            "type": "shell",
+            "command": "npm run electron-dev",
+            "options": {
+                "cwd": "client"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Test",
+            "type": "shell",
+            "command": "docker-compose up tester",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Data Migration",
+            "type": "shell",
+            "command": "docker-compose exec server flask db upgrade ${input:migrationVersion}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Data Migration Rollback",
+            "type": "shell",
+            "command": "docker-compose exec server flask db downgrade ${input:migrationVersion}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Rebuild npm library",
+            "type": "shell",
+            "command": "npm install",
+            "options": {
+                "cwd": "client"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Execute Docker Tasks Sequentially",
+            "type": "shell",
+            "command": "echo Sequential Docker Tasks Completed",
+            "dependsOn": [
+                "Stop Docker",
+                "Clean All Docker Images",
+                "Clean All Docker Volumes",
+                "Rebuild and Run Docker"
+            ],
+            "problemMatcher": [],
+            "promptOnClose": false
+        }
+    ],
+    "inputs": [
+        {
+            "id": "migrationVersion",
+            "description": "Please enter the migration version: ",
+            "type": "promptString"
+        }
+    ]
+    
+}

@@ -1,0 +1,844 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Timetabling API",
+    "description": "API to handle timetabling crud operations"
+  },
+  "basePath": "/v1/api",
+  "schemes": ["http"],
+  "paths": {
+    "/generate_brute_force": {
+      "get": {
+        "summary": "Generate timetable using brute force algorithm",
+        "description": "Generate timetable for all the units using brute force",
+        "responses": {
+          "200": {
+            "description": "Data retrieved successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clash-free-sets": {
+      "get": {
+        "summary": "Get all Clash Free Sets",
+        "description": "Retrieve all clash free sets from the database",
+        "responses": {
+          "200": {
+            "description": "Data retrieved successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "set": {
+                        "type": "string"
+                      },
+                      "ref_type": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No clash free sets found"
+          }
+        }
+      }
+    },
+    "/disciplines": {
+      "get": {
+        "summary": "Get all Disciplines",
+        "description": "Retrieve all disciplines from the database",
+        "responses": {
+          "200": {
+            "description": "Data retrieved successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No disciplines found"
+          }
+        }
+      }
+    },
+    "/cfs/{cfs_id}": {
+      "put": {
+        "summary": "Update a Clash Free Set",
+        "description": "Update a clash free set based on its ID",
+        "parameters": [
+          {
+            "name": "cfs_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the clash free set to update"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Data to update the clash free set",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "set": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clash Free Set updated successfully"
+          },
+          "404": {
+            "description": "Clash free set not found"
+          }
+        }
+      }
+    },
+    "/upload-unit-csv": {
+      "post": {
+        "summary": "Upload Units Data",
+        "description": "Upload a CSV file containing units data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-venue-csv": {
+      "post": {
+        "summary": "Upload Venues Data",
+        "description": "Upload a CSV file containing venues data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-cfs-csv": {
+      "post": {
+        "summary": "Upload Clash Free Sets Data",
+        "description": "Upload a CSV file containing clash free sets data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-faculty-csv": {
+      "post": {
+        "summary": "Upload Faculty Data",
+        "description": "Upload a CSV file containing faculty data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-cohort-csv": {
+      "post": {
+        "summary": "Upload Cohorts Data",
+        "description": "Upload a CSV file containing cohorts data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-staff-csv": {
+      "post": {
+        "summary": "Upload Staff Data",
+        "description": "Upload a CSV file containing staff data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-discipline-csv": {
+      "post": {
+        "summary": "Upload Disciplines Data",
+        "description": "Upload a CSV file containing disciplines data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/upload-unit-session-csv": {
+      "post": {
+        "summary": "Upload Unit Sessions Data",
+        "description": "Upload a CSV file containing unit sessions data",
+        "responses": {
+          "200": {
+            "description": "Data inserted successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid or missing data"
+          },
+          "500": {
+            "description": "Failed to process CSV file"
+          }
+        }
+      }
+    },
+    "/calculate-goodness-score": {
+      "post": {
+        "summary": "Calculate Goodness Score",
+        "description": "Calculate the goodness score for the timetable",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "weights",
+            "description": "Weights for calculating the goodness score",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "venue_optimization_weight": {
+                  "type": "number",
+                  "default": 0.4,
+                  "description": "Weight for venue optimization"
+                },
+                "unit_conflict_weight": {
+                  "type": "number",
+                  "default": 0.6,
+                  "description": "Weight for unit conflict"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Goodness score calculated successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "venue_optimization_final_score": {
+                  "type": "number"
+                },
+                "unit_conflict_final_score": {
+                  "type": "number"
+                },
+                "goodness_score": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to calculate goodness score"
+          }
+        }
+      }
+    },
+    "/staff": {
+      "get": {
+        "summary": "Get All Staff",
+        "description": "Retrieve a list of all staff members",
+        "responses": {
+          "200": {
+            "description": "Data retrieved successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "firstname": {
+                        "type": "string"
+                      },
+                      "lastname": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No staff found"
+          }
+        }
+      }
+    },
+    "/units": {
+      "get": {
+        "summary": "Get All Units",
+        "description": "Retrieve a list of all units",
+        "responses": {
+          "200": {
+            "description": "Data retrieved successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "credit": {
+                        "type": "integer"
+                      },
+                      "quota": {
+                        "type": "integer"
+                      },
+                      "sessions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "duration_hours": {
+                              "type": "integer"
+                            },
+                            "capacity": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No units found"
+          }
+        }
+      }
+    },
+    "/unit/{unit_id}": {
+      "put": {
+        "summary": "Update Unit",
+        "description": "Update the quota of a unit based on its ID",
+        "parameters": [
+          {
+            "name": "unit_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the unit to update"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Data to update the unit",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quota": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unit updated successfully"
+          },
+          "404": {
+            "description": "Unit not found"
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "Register User",
+        "description": "Register a new user",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "admin": {
+                  "type": "boolean",
+                  "description": "Indicates if the user has admin privileges"
+                },
+                "firstname": {
+                  "type": "string",
+                  "description": "The first name of the user"
+                },
+                "lastname": {
+                  "type": "string",
+                  "description": "The last name of the user"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "The email address of the user"
+                },
+                "password": {
+                  "type": "string",
+                  "format": "password",
+                  "description": "The password for the user"
+                }
+              },
+              "required": [
+                "admin",
+                "firstname",
+                "lastname",
+                "email",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User created successfully"
+          },
+          "400": {
+            "description": "Missing required fields"
+          },
+          "409": {
+            "description": "Email already exists"
+          }
+        }
+      }
+    },
+    "/authentication": {
+      "post": {
+        "summary": "User Authentication",
+        "description": "Authenticate a user and generate an access token",
+        "responses": {
+          "200": {
+            "description": "Authentication successful"
+          },
+          "400": {
+            "description": "Missing email or password"
+          },
+          "401": {
+            "description": "Invalid email or password"
+          }
+        }
+      }
+    },
+    "/protected": {
+      "get": {
+        "summary": "Protected Endpoint",
+        "description": "Access protected route",
+        "responses": {
+          "200": {
+            "description": "Access granted"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "summary": "Logout",
+        "description": "Logout a user and clear their access token",
+        "responses": {
+          "201": {
+            "description": "User logged out successfully"
+          }
+        }
+      }
+    },
+    "/validate-token": {
+      "post": {
+        "summary": "Validate Token",
+        "description": "Validate an access token for a user",
+        "responses": {
+          "200": {
+            "description": "Token is valid"
+          },
+          "400": {
+            "description": "Missing email or token"
+          },
+          "401": {
+            "description": "Invalid token or no token present"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/forget-pwd": {
+      "post": {
+        "summary": "Forget Password",
+        "description": "Initiate the forget password process for a user",
+        "responses": {
+          "201": {
+            "description": "OTP sent successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Email and user name do not match"
+          },
+          "500": {
+            "description": "Failed to send OTP or too many attempts"
+          }
+        }
+      }
+    },
+    "/verifying-otp": {
+      "post": {
+        "summary": "Verify OTP",
+        "description": "Verify the provided OTP for a user",
+        "responses": {
+          "200": {
+            "description": "OTP verified successfully"
+          },
+          "400": {
+            "description": "Invalid OTP"
+          },
+          "404": {
+            "description": "No record found for the given email"
+          }
+        }
+      }
+    },
+    "/change-pwd": {
+      "post": {
+        "summary": "Change Password",
+        "description": "Change the password for the logged-in user",
+        "responses": {
+          "201": {
+            "description": "Password updated successfully"
+          },
+          "400": {
+            "description": "Missing parameters"
+          },
+          "401": {
+            "description": "Old password mismatch or email not found"
+          }
+        }
+      }
+    },
+    "/user-info": {
+      "get": {
+        "summary": "User Info",
+        "description": "Retrieve the logged-in user's information",
+        "responses": {
+          "200": {
+            "description": "User information retrieved successfully"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/update-profile": {
+      "put": {
+        "summary": "Update Profile",
+        "description": "Update the profile information for the logged-in user",
+        "responses": {
+          "200": {
+            "description": "Profile updated successfully"
+          },
+          "400": {
+            "description": "Authorization required"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/reset_password/{token}": {
+      "get": {
+        "summary": "Reset Password",
+        "description": "Reset the user's password using a token",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Password reset token"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Password updated successfully"
+          },
+          "404": {
+            "description": "Invalid or expired token, or missing password"
+          }
+        }
+      }
+    },
+    "/update-description": {
+      "put": {
+        "summary": "Update Description",
+        "description": "Update the user's description",
+        "responses": {
+          "200": {
+            "description": "Description updated successfully"
+          },
+          "401": {
+            "description": "Authorization required"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/venue": {
+      "post": {
+        "summary": "Upload Venue",
+        "description": "Upload a venue",
+        "responses": {
+          "201": {
+            "description": "Venue uploaded successfully"
+          }
+        }
+      }
+    },
+    "/venues": {
+      "get": {
+        "summary": "Get All Venues",
+        "description": "Retrieve a list of all venues",
+        "responses": {
+          "200": {
+            "description": "Data retrieved successfully"
+          }
+        }
+      }
+    },
+    "/venues/{venue_id}": {
+      "get": {
+        "summary": "Get Venue Details",
+        "description": "Retrieve details of a specific venue",
+        "parameters": [
+          {
+            "name": "venue_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the venue to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Venue details retrieved successfully"
+          },
+          "404": {
+            "description": "Venue not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Venue",
+        "description": "Delete a specific venue",
+        "parameters": [
+          {
+            "name": "venue_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID of the venue to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Venue deleted successfully"
+          },
+          "404": {
+            "description": "Venue not found"
+          }
+        }
+      }
+    },
+    "/venue/{venue_id}": {
+      "put": {
+        "summary": "Update Venue",
+        "description": "Update a specific venue",
+        "parameters": [
+          {
+            "name": "venue_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the venue to update"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Data to update the venue",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "capacity": {
+                  "type": "integer"
+                },
+                "blocked_timeslots": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Venue updated successfully"
+          },
+          "404": {
+            "description": "Venue not found"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,678 @@
+.app {
+  background-color: #eefcff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.homeUnauth {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  padding-top: 10%;
+  height: 100%;
+  width: 100%;
+}
+
+.home {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.authForm {
+  background-color: #f4f4f4;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f4ea8e;
+  border-radius: 30px;
+  margin: auto auto;
+  padding: 50px;
+  text-align: center;
+  max-width: 500px;
+}
+
+span .navItem {
+  color: black;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+.regoRedirectLink {
+  color: #1876d1;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.navBar {
+  background-color: floralwhite;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.contentContainer {
+  margin: 20px;
+  padding-bottom: 200px;
+}
+
+.cardSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.homepageMainBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.homepageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 10vh;
+}
+.scheduleButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scheduleButton:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.managepagefirstRowContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.managepageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.managepageBox {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2%;
+}
+
+.managepageBox:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+  border-color: #d0d0d0;
+}
+
+.homepageBox {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin: 10px 0;
+  width: 300px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.homepageBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #666;
+}
+
+.homepageContainerItem {
+  text-align: center;
+  padding: 5%;
+}
+
+.button {
+  background-color: #1876d1;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #105fa2;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.buttonGroup {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.listContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.productHero {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffe600;
+  padding: 5vh;
+  width: 100vw;
+}
+
+.heroContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.heroImageContainer {
+  flex: 1;
+}
+
+.heroText {
+  flex: 2;
+  text-align: left;
+}
+
+.heroText h1 {
+  margin-bottom: 20px;
+}
+
+.heroText ul {
+  list-style: none;
+  padding: 0;
+}
+
+.heroText ul li {
+  margin-bottom: 10px;
+}
+
+.heroButton {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.heroButton:hover {
+  background-color: #43a047;
+}
+
+.homepageMainBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.dropdown {
+  padding: 8px 16px;
+  margin-top: 10px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #1876d1;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #105fa2;
+}
+
+/* Style the timetable container with grid to align days of the week side by side */
+.timetableContainer {
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    minmax(180px, 1fr)
+  ); /* Adjust minmax for your minimum column size */
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #f9f9fb;
+  border-radius: 8px;
+}
+
+/* Style each day column */
+.dayColumn {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* For rounded corners */
+}
+
+/* Style the day header */
+.dayHeader {
+  background-color: #eef2f7;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd; /* Separates day header from content */
+}
+
+/* Style each hour slot */
+.hourSlot {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0; /* Separates hour slots */
+}
+
+/* Strong tag within hour slot */
+.hourSlot > strong {
+  padding: 10px;
+  text-align: center;
+  display: block; /* Make strong tag a block to take up full width */
+  margin-bottom: 5px;
+  color: #1876d1;
+  font-weight: bold;
+}
+
+/* Style for the session box */
+.sessionBox {
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-left: 3px solid #1876d1; /* Accent color to the left */
+  border-radius: 4px;
+}
+
+/* Styling for paragraphs inside session box to handle typography */
+.sessionBox p {
+  color: #555;
+  margin-bottom: 4px; /* Space between paragraphs */
+  font-size: 14px;
+}
+
+.sessionBox p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1876d1;
+}
+
+.sessionBox p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sessionBox p:nth-child(3) {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+.sessionBox p:last-child {
+  font-size: 14px;
+  color: #333;
+}
+
+.noSessions {
+  text-align: center;
+  color: #aaa;
+  padding: 10px;
+}
+
+.pageNotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #999;
+}
+
+.link {
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.addButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.inactiveVenue {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.editButton {
+  color: 007BFF;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.editButton:hover {
+  background-color: #007bff;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.customCheckbox {
+  accent-color: #007bff;
+  margin-right: 10px;
+}
+
+.checkboxLabel {
+  color: #666;
+  font-size: 16px;
+}
+
+.sessionDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  flex-wrap: wrap; /* Allow session details to wrap within the card */
+}
+
+.sessionType {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.sessionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.sessionInfo strong {
+  font-weight: bold;
+}
+
+.chip {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.chipContainer {
+  margin-bottom: 10px;
+}
+
+.setLabel {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 40%;
+  gap: 10px;
+  padding: 3vw;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.warningBox {
+  background-color: #ffcccb;
+  color: #a94442;
+  border: 1px solid #a94442;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 30px;
+  width: 100%;
+}
+
+.goodnessSummaryBox {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 40%;
+  gap: 10px;
+}
+
+.goodnessValueBox {
+  margin-bottom: 10px;
+}
+
+.goodnessValue {
+  font-size: 1.5em;
+  color: #4caf50;
+}
+
+.goodnessBreakdownBox {
+  width: 100%;
+  max-width: 300px;
+}
+
+.breakdownContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breakdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.breakdownBar {
+  background-color: #4caf50;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px 5px;
+  width: 30%;
+  max-width: 300px;
+}
+
+.unitsContainer {
+  width: 90%;
+}
+
+.unitBox {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.invalidSession {
+  border: 2px solid red;
+  background-color: #fdd;
+}
+.facultyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.facultyBox {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.facultyTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.disciplineContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.disciplineBox {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
