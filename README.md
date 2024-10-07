@@ -194,3 +194,68 @@ Automated tests are integrated into the Docker environment:
 
 - **Comprehensive Testing**:  
   The project includes a suite of automated unit tests covering routes, models, and core functionality to ensure consistent behavior.
+
+---
+
+# Showcase
+
+Below are the key features demonstrated via screenshots:
+
+### 1. Signup/Signin
+
+![Signup](./screenshots/signup.png)
+![Signin](./screenshots/signin.png)
+
+### 2. Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+### 3. Import Existing Timetable
+
+![Import Existing Timetable](./screenshots/import-timetable.png)
+
+### 4. Generate Timetable
+
+#### 4.1 Customised Dataset
+
+![Generate Timetable with Customised Dataset](./screenshots/generate-1.png)
+
+#### 4.2 Configurable Algorithm Parameters
+
+![Configurable Algorithm Parameters](./screenshots/generate-2.png)
+
+#### 4.3 Generating In Progress
+
+![Generating In Progress](./screenshots/generate-3.png)
+
+#### 4.4 Generate successfully
+
+![Generate successfully](./screenshots/generate-4.png)
+
+### 5. Timetable Management
+
+![Timetable Management](./screenshots/timetable-management.png)
+
+#### 5.1 Timetable by Day
+
+![Timetable by Day](./screenshots/timetable-day.png)
+
+#### 5.2 Timetable by Venue
+
+![Timetable by Venue](./screenshots/timetable-venue.png)
+
+#### 5.3 Timetable by Unit
+
+![Timetable by Unit](./screenshots/timetable-unit.png)
+
+#### 5.4 Pipeline Timetable
+
+![Pipeline Timetable](./screenshots/timetable-pipeline.png)
+
+### 6. Property Management
+
+![Property Management](./screenshots/property-management.png)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
